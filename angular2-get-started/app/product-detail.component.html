@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6" style="margin:  0 auto">
+            <table class="table" *ngIf="productDetail">
+                <tr>
+                    <td>Id</td>
+                    <td>{{productDetail.id}}</td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>{{productDetail.name}}</td>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td>{{productDetail.price}}</td>
+                </tr>
+                <tr>
+                    <td>Category</td>
+                    <td>{{productDetail.category}}</td>
+                </tr>
+                <tr>
+                    <td>Describe</td>
+                    <td>{{productDetail.describe}}</td>
+                </tr>
+                <tr>
+                    <td>Image</td>
+                    <td>
+                        
+                    <img src="{{productDetail.image}}" alt="">
+                       
+                    </td>
+                </tr>
+
+            </table>
+            <a class="btn btn-primary" [routerLink]="['/product']">Go back</a>
+        </div>
+    </div>
+</div>

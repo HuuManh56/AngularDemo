@@ -1,0 +1,45 @@
+<div class="container">
+        <div class="row">
+            <div class="col-md-4" style="margin: 0 auto">
+                <h3 style="text-align: center">Create New</h3>
+                <form action="" [formGroup]="formProduct" (ngSubmit)="SaveForm()" >
+                    <div class="form-group">
+                        <label for=""> Name</label>
+                        <input type="text" class="form-control" formControlName="name" [(ngModel)]="product.name">
+                       
+                    </div>
+                    <div class="form-group">
+                        <label for=""> Price</label>
+                        <input type="number" class="form-control" formControlName="price" [(ngModel)]="product.price">
+                        
+                    </div>
+                    <div class="form-group">
+                            <label for=""> Category</label>
+                            <select [(ngModel)]="product.category" formControlName="category" class="form-control">
+                                <option *ngFor="let x of cate"  [value]="x.name"   >{{x.name}}</option>
+                                
+                              </select>
+                            
+                        </div>
+                    <div class="form-group">
+                        <label for="">Describe</label>
+                        <input type="text" class="form-control" formControlName="describe" [(ngModel)]="product.describe"  >
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for=""> Image</label>
+                        <!-- <img src="{{product.image}}" alt="" style="widows: 300px">
+                        <input type="text" class="form-control" formControlName="image" [(ngModel)]="product.image"> -->
+                        <img [src]="url" height="200" > <br/>
+                        <input type='file' (change)="onSelectFile($event)" formControlName="image"  [(ngModel)]="url" >
+                    </div>
+                   
+    
+                    <button type="submit" class="btn btn-primary" >Save     </button>
+                    <button type="button" class="btn btn-primary" (click)="GotoListProduct()"> Back </button>
+                </form>
+            </div>
+        </div>
+    
+    </div>
+    

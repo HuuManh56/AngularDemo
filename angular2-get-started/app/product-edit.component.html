@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" style="margin: 0 auto">
+            <h3 style="text-align: center">Edit</h3>
+            <form action="" [formGroup]="formProduct" (ngSubmit)="SaveForm()" *ngIf="product">
+                <div class="form-group">
+                    <label for=""> Name</label>
+                    <input type="text" class="form-control" formControlName="name" [(ngModel)]="product.name">
+                   
+                </div>
+                <div class="form-group">
+                    <label for=""> Price</label>
+                    <input type="number" class="form-control" formControlName="price" [(ngModel)]="product.price">
+                    
+                </div>
+                <div class="form-group">
+                        <label for=""> Category</label>
+                        <!-- <input type="text" class="form-control" formControlName="category" [(ngModel)]="product.category" > -->
+                        <select [(ngModel)]="product.category" formControlName="category" >
+                            <option *ngFor="let x of cate" class="form-control" [value]="x.name"   >{{x.name}}</option>
+                            
+                          </select>
+                    </div>
+                <div class="form-group">
+                    <label for="">Describe</label>
+                    <input type="text" class="form-control" formControlName="describe" [(ngModel)]="product.describe"  >
+                   
+                </div>
+                <div class="form-group">
+                    <label for=""> Image</label>
+                    <div class="col-md-4">
+                        <img src="{{product.image}}" alt="" style="width:300px">
+                    </div>
+                   
+                    <input style="margin-top: 20px" type="text" class="form-control" formControlName="image" [(ngModel)]="product.image">
+                   
+                </div>
+               
+
+                <button type="submit" class="btn btn-primary" >Save     </button>
+                <button type="button" class="btn btn-primary" (click)="GotoListProduct()"> Back </button>
+            </form>
+        </div>
+    </div>
+
+</div>
